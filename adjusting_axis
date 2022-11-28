@@ -1,0 +1,18 @@
+Sub sample01 ()
+Dim xytitle As chart
+Set xytitle = Worksheets("graph").ChartObjects(1).chart
+With xytitle.axes(xlCategory)
+   .HasTitle = True
+   .AxisTitle.Text = "Genotype"
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+With xytitle.axes(xlValue)
+   .HasTitle = True
+   .AxisTitle.Text = "Yield(kh/ha)"
+   .MaximumScale = 150
+   .MajorUnit = 30
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+End Sub
