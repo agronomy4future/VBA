@@ -1,3 +1,4 @@
+# One graph
 Sub sample01 ()
 Dim xytitle As chart
 Set xytitle = Worksheets("graph").ChartObjects(1).chart
@@ -15,4 +16,78 @@ With xytitle.axes(xlValue)
    .AxisTitle.Font.Size = 16
    .AxisTitle.Font.Bold = False
 End With
+End Sub
+
+
+## Several graphs 
+Sub sample01 ()
+Dim xytitle As chart
+Set xytitle = Worksheets("graph").ChartObjects(1).chart
+With xytitle.axes(xlCategory)
+   .HasTitle = True
+   .AxisTitle.Text = "Genotype"
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+With xytitle.axes(xlValue)
+   .HasTitle = True
+   .AxisTitle.Text = "Yield(kh/ha)"
+   .MaximumScale = 150
+   .MajorUnit = 30
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+Set xytitle = Worksheets("graph").ChartObjects(2).chart
+With xytitle.axes(xlCategory)
+   .HasTitle = True
+   .AxisTitle.Text = "Genotype"
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+With xytitle.axes(xlValue)
+   .HasTitle = True
+   .AxisTitle.Text = "Yield(kh/ha)"
+   .MaximumScale = 150
+   .MajorUnit = 30
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+Set xytitle = Worksheets("graph").ChartObjects(3).chart
+With xytitle.axes(xlCategory)
+   .HasTitle = True
+   .AxisTitle.Text = "Genotype"
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+With xytitle.axes(xlValue)
+   .HasTitle = True
+   .AxisTitle.Text = "Yield(kh/ha)"
+   .MaximumScale = 150
+   .MajorUnit = 30
+   .AxisTitle.Font.Size = 16
+   .AxisTitle.Font.Bold = False
+End With
+End Sub
+
+# For Next
+Sub sample02 ()  
+Dim xytile As Chart  
+Dim i As Integer    
+For i = 1 To 6    
+Set xytitle = Worksheets("graph").ChartObjects(i).Chart     
+With xytitle.Axes(xlCategory)    
+ .HasTitle = True    
+ .AxisTitle.Text = "Genoytpe"  
+ .AxisTitle.Font.Size = 16   
+ .AxisTitle.Font.Bold = False      
+End With    
+With xytitle.Axes(xlValue)    
+ .HasTitle = True   
+ .AxisTitle.Text = "Yield(kg/ha)"    
+ .MaximumScale = 150    
+ .MajorUnit = 30    
+ .AxisTitle.Font.Size = 16    
+ .AxisTitle.Font.Bold = False    
+End With    
+Next    
 End Sub
